@@ -11,9 +11,22 @@
 # 1 2 1 2 2
 # Вывод: 2
 
-import random      # заполнение списка псевдослучайными целыми числами в диапазоне от 0 до 1
-listOfcoins = []
-for coin in range(1, n + 1):
-    listOfcoins.append(random.randint(0, 1))
-print(listOfcoins)
-print('')
+n = int(input('Введите длину списка: '))
+if n <= 0:
+    print('Недопустимый формат числа.')
+else:
+    print('Получившийся массив: ')
+    import random      
+    randomList = []
+    for elements in range(1, n + 1):
+        randomList.append(random.randint(0, n // 2))
+    print(randomList)
+    print('')
+
+    x = int(input('Введите число, которое необходимо проверить: '))
+
+    count = 0
+    for el in randomList:
+        if el == x:
+            count += 1
+    print(f'В построенном списке количество элементов со значением {x}: {count}.')
